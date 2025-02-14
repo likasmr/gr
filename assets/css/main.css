@@ -1107,8 +1107,6 @@ input, select, textarea {
 /* BG */
 
 	#bg {
-		background-image: url("https://www.loliapi.com/acg/");
-		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
 		-moz-transform: scale(1.0);
 		-webkit-transform: scale(1.0);
 		-ms-transform: scale(1.0);
@@ -1661,11 +1659,3 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-
-@media screen and (orientation: portrait) and (max-width: 736px) {
-	#bg {
-		background-size: auto;
-		background-position: 30% 0%;
-		background-repeat: no-repeat;
-	}
-}
