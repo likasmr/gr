@@ -1689,11 +1689,12 @@ input, select, textarea {
 		}
 
 #footer .copyright a {
-    color: #d8caeb;
-    text-decoration: none;
+    color: #d8caeb !important;
+    text-decoration: none !important;
+    text-transform: none !important;
     transition: color 0.3s ease;
 }
 
 #footer .copyright a:hover {
-    color: #ffffff;
+    color: #ffffff !important;
 }
