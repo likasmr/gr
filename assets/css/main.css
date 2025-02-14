@@ -1298,7 +1298,7 @@ input, select, textarea {
 			border-radius: 100%;
 			overflow: hidden;
 			position: relative;
-			box-shadow: 0 0 15px #d8caeb;
+			box-shadow: 0 0 15px #4a4159;
 			transition: box-shadow 0.3s ease;
 			cursor: pointer;
 		}
@@ -1312,16 +1312,17 @@ input, select, textarea {
 				position: absolute;
 				width: 150%;
 				height: 150%;
-				background: radial-gradient(circle, #d8caeb 0%, transparent 70%);
+				background: radial-gradient(circle, #4a4159 0%, transparent 70%);
 				top: -25%;
 				left: -25%;
 				opacity: 0;
 				animation: rotate 4s linear infinite;
-				transition: opacity 0.3s ease;
+				transition: opacity 0.3s ease, background 0.3s ease;
 			}
 
 			#header .logo:hover:before {
 				opacity: 0.3;
+				background: radial-gradient(circle, #d8caeb 0%, transparent 70%);
 			}
 
 			#header .logo img {
@@ -1483,7 +1484,7 @@ input, select, textarea {
 				width: 4.75rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
-				box-shadow: 0 0 15px #d8caeb;
+				box-shadow: 0 0 15px #4a4159;
 			}
 
 				#header .logo:hover {
