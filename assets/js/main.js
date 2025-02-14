@@ -399,19 +399,3 @@
 					});
 
 })(jQuery);
-
-// 在文件最后添加以下代码
-(function() {
-	// 随机背景图片
-	const bg = document.getElementById('bg');
-	function updateBackground() {
-		const timestamp = new Date().getTime();
-		bg.style.backgroundImage = `url('https://moe.jitsu.top/img/?sort=pc&t=${timestamp}')`;
-	}
-	
-	// 每次页面加载更新
-	updateBackground();
-	
-	// 可选：每小时自动刷新背景（按需开启）
-	// setInterval(updateBackground, 3600000);
-})();
