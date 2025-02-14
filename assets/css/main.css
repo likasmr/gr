@@ -1297,9 +1297,9 @@ input, select, textarea {
 			border: 2px solid rgba(216, 202, 235, 0.3);
 			border-radius: 100%;
 			overflow: hidden;
-			transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+			transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 			box-shadow: 0 0 25px 8px rgba(216, 202, 235, 0.6);
-			animation: gentlePulse 3s ease-in-out infinite;
+			animation: pulse 3s ease-in-out infinite alternate;
 		}
 
 			#header .logo img {
@@ -1312,19 +1312,22 @@ input, select, textarea {
 
 		#header .logo:hover {
 			box-shadow: 0 0 35px 15px rgba(216, 202, 235, 0.9);
-			transform: scale(1.02);
 			animation: none;
+			transform: scale(1.03);
 		}
 
-		@keyframes gentlePulse {
+		@keyframes pulse {
 			0% {
 				box-shadow: 0 0 25px 8px rgba(216, 202, 235, 0.4);
+				transform: scale(1);
 			}
 			50% {
 				box-shadow: 0 0 30px 10px rgba(216, 202, 235, 0.6);
+				transform: scale(1.02);
 			}
 			100% {
-				box-shadow: 0 0 25px 8px rgba(216, 202, 235, 0.4);
+				box-shadow: 0 0 35px 12px rgba(216, 202, 235, 0.7);
+				transform: scale(1);
 			}
 		}
 
