@@ -1293,15 +1293,12 @@ input, select, textarea {
 		#header .logo {
 			width: 5.5rem;
 			height: 5.5rem;
-			border: solid 1px #ffc0cb;
+			line-height: 5.5rem;
+			border: solid 1px #ffffff;
 			border-radius: 100%;
 			overflow: hidden;
-			position: relative;
-			box-shadow: 0 0 15px rgba(255, 192, 203, 0.4),
-						0 0 30px rgba(255, 192, 203, 0.2),
-						0 0 45px rgba(255, 192, 203, 0.1);
-			transition: all 0.5s ease-in-out;
-			animation: glow 2s infinite alternate;
+			transition: box-shadow 0.3s ease-in-out;
+			box-shadow: 0 0 15px 5px rgba(216, 202, 235, 0.4);
 		}
 
 			#header .logo img {
@@ -1671,25 +1668,3 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
-
-/* 添加发光动画 */
-@keyframes glow {
-	from {
-		box-shadow: 0 0 15px rgba(255, 192, 203, 0.4),
-					0 0 30px rgba(255, 192, 203, 0.2),
-					0 0 45px rgba(255, 192, 203, 0.1);
-	}
-	to {
-		box-shadow: 0 0 20px rgba(255, 192, 203, 0.6),
-					0 0 40px rgba(255, 192, 203, 0.4),
-					0 0 60px rgba(255, 192, 203, 0.2);
-	}
-}
-
-/* 鼠标悬停效果 */
-#header .logo:hover {
-	animation: glow 0.8s infinite alternate;
-	box-shadow: 0 0 25px rgba(255, 192, 203, 0.8),
-				0 0 50px rgba(255, 192, 203, 0.6),
-				0 0 75px rgba(255, 192, 203, 0.4);
-}
