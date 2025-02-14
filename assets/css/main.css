@@ -1687,3 +1687,13 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+#footer .copyright a {
+    color: #d8caeb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#footer .copyright a:hover {
+    color: #ffffff;
+}
