@@ -1298,7 +1298,7 @@ input, select, textarea {
 			border-radius: 100%;
 			overflow: hidden;
 			position: relative;
-			box-shadow: 0 0 30px rgba(28, 139, 255, 0.7);
+			box-shadow: 0 0 30px rgba(0, 84, 255, 0.7);
 			transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
@@ -1459,7 +1459,7 @@ input, select, textarea {
 				width: 4.75rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
-				box-shadow: 0 0 25px rgba(28, 139, 255, 0.7);
+				box-shadow: 0 0 25px rgba(0, 84, 255, 0.7);
 				transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 			}
 
