@@ -1,7 +1,8 @@
 .App {
-  background-image: url('https://www.loliapi.com/acg');
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  /* 其他样式... */
+  text-align: center;
+  /* 将背景图片更新为新的 URL */
+  background-image: url("https://www.loliapi.com/acg");
+  background-size: cover;           /* 让背景图片覆盖整个容器 */
+  background-position: center;      /* 保持图片居中 */
+  background-repeat: no-repeat;     /* 禁止平铺背景图片 */
 } 
