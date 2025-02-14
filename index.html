@@ -349,7 +349,15 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- BG -->
-			<div id="bg" style="background-image: url('https://www.loliapi.com/acg');"></div>
+			<div id="bg"></div>
+
+		<!-- Custom Styles -->
+		<style>
+			#bg:after {
+				background-image: url('https://www.loliapi.com/acg?' + new Date().getTime()) !important;
+				background-size: cover !important;
+			}
+		</style>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
