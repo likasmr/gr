@@ -11,6 +11,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#bg {
+				background-image: url('https://moe.jitsu.top/img/?sort=pc') !important;
+				background-size: cover !important;
+				background-position: center !important;
+			}
+			#bg::before {
+				background-color: transparent !important;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -354,10 +364,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- BG -->
-			<div id="bg" style="background-image: url('https://moe.jitsu.top/img/?sort=pc') !important; 
+			<div id="bg" style="background-image: url('https://moe.jitsu.top/img/?sort=pc') !important;
 					  background-size: cover !important;
-					  background-position: center !important;
-					  background-repeat: no-repeat !important;"></div>
+					  background-position: center center !important;
+					  background-repeat: no-repeat !important;
+					  background-attachment: fixed !important;"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
