@@ -12,6 +12,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* 自定义背景样式 */
+			#bg {
+				background-size: cover !important;
+				background-position: center !important;
+				background-repeat: no-repeat !important;
+				filter: brightness(0.7);
+			}
+			
+			/* 响应式调整 */
+			@media screen and (max-width: 768px) {
+				#bg {
+					background-attachment: scroll !important;
+				}
+				.custom-logo {
+					width: 60px !important;
+					height: 60px !important;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -22,13 +42,14 @@
 					<header id="header">
 						<div class="logo">
 							<img src="https://tgimg.langtest.online/file/1739553250832_11zon_cropped.png" 
-								 alt="头像" 
-								 style="width: 100%; border-radius: 50%">
+								 alt="Logo" 
+								 class="custom-logo" 
+								 style="width: 80px; height: 80px; border-radius: 50%;">
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1 style="font-size: 4em; letter-spacing: 0.1em">QI</h1>
-								<p>技术探索者 | 创新实践者</p>
+								<h1 style="font-size: 4em; letter-spacing: 0.1em;">Qi</h1>
+								<p>区块链开发者 | 智能合约工程师</p>
 							</div>
 						</div>
 						<nav>
@@ -360,20 +381,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			</div>
 
 		<!-- BG -->
-			<div id="bg" style="
-				background-image: url('https://moe.jitsu.top/img/?sort=pc') !important;
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-				background-attachment: fixed;
-				opacity: 1 !important;
-				z-index: -1;
-				position: fixed;
-				width: 100%;
-				height: 100%;
-				top: 0;
-				left: 0;
-			"></div>
+			<div id="bg" style="background-image: url('https://moe.jitsu.top/img/?sort=pc');"></div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
