@@ -1294,11 +1294,12 @@ input, select, textarea {
 			width: 5.5rem;
 			height: 5.5rem;
 			line-height: 5.5rem;
-			border: solid 1px #ffffff;
+			border: 2px solid rgba(216, 202, 235, 0.3);
 			border-radius: 100%;
 			overflow: hidden;
-			transition: box-shadow 0.3s ease-in-out;
-			box-shadow: 0 0 15px 5px rgba(216, 202, 235, 0.4);
+			transition: all 0.5s ease-in-out;
+			box-shadow: 0 0 25px 8px rgba(216, 202, 235, 0.6);
+			animation: pulse 2s infinite alternate;
 		}
 
 			#header .logo img {
@@ -1308,6 +1309,21 @@ input, select, textarea {
 				position: relative;
 				z-index: 1;
 			}
+
+		#header .logo:hover {
+			box-shadow: 0 0 35px 15px rgba(216, 202, 235, 0.9);
+			animation: none;
+			transform: scale(1.05);
+		}
+
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 25px 8px rgba(216, 202, 235, 0.4);
+			}
+			100% {
+				box-shadow: 0 0 35px 12px rgba(216, 202, 235, 0.7);
+			}
+		}
 
 		#header .content {
 			border-style: solid;
