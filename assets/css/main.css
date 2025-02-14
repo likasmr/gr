@@ -1107,23 +1107,28 @@ input, select, textarea {
 /* BG */
 
 	#bg {
+		position: fixed !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: 100% !important;
+		height: 100vh !important;
 		background-image: url('https://www.loliapi.com/acg/') !important;
 		background-size: cover !important;
 		background-position: center !important;
-		filter: blur(8px) brightness(0.7); /* 添加背景模糊和亮度降低 */
-		transform: scale(1.05); /* 防止边缘留白 */
-		z-index: 1 !important;
+		z-index: 0 !important;
 	}
 
 	#bg::before,
 	#bg::after {
-		content: none !important; /* 完全移除伪元素 */
 		display: none !important;
+		content: none !important;
 	}
 
 /* Wrapper */
 
 	#wrapper {
+		z-index: 2 !important;
+		position: relative;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1140,11 +1145,9 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		position: relative;
 		min-height: 100vh;
 		width: 100%;
 		padding: 4rem 2rem;
-		z-index: 3;
 	}
 
 		#wrapper:before {
@@ -1475,31 +1478,18 @@ input, select, textarea {
 	}
 
 		#main article {
-			-moz-transform: translateY(0.25rem);
-			-webkit-transform: translateY(0.25rem);
-			-ms-transform: translateY(0.25rem);
-			transform: translateY(0.25rem);
-			-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+			background: rgba(27, 31, 34, 0.9) !important;
+			border: 1px solid rgba(255,255,255,0.2) !important;
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background: rgba(27, 31, 34, 0.85) !important;
-			backdrop-filter: blur(12px) saturate(160%);
-			-webkit-backdrop-filter: blur(12px) saturate(160%);
-			border: 1px solid rgba(255,255,255,0.15);
-			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 			opacity: 0;
 		}
 
 			#main article.active {
-				-moz-transform: translateY(0);
-				-webkit-transform: translateY(0);
-				-ms-transform: translateY(0);
-				transform: translateY(0);
 				opacity: 1;
 			}
 
