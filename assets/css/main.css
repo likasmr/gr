@@ -1107,28 +1107,82 @@ input, select, textarea {
 /* BG */
 
 	#bg {
-		position: fixed !important;
-		top: 0 !important;
-		left: 0 !important;
-		width: 100% !important;
-		height: 100vh !important;
-		background-image: url('https://www.loliapi.com/acg/') !important;
-		background-size: cover !important;
-		background-position: center !important;
-		z-index: 0 !important;
+		-moz-transform: scale(1.0);
+		-webkit-transform: scale(1.0);
+		-ms-transform: scale(1.0);
+		transform: scale(1.0);
+		-webkit-backface-visibility: hidden;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		z-index: 1;
 	}
 
-	#bg::before,
-	#bg::after {
-		display: none !important;
-		content: none !important;
-	}
+		#bg:before, #bg:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		#bg:before {
+			-moz-transition: background-color 2.5s ease-in-out;
+			-webkit-transition: background-color 2.5s ease-in-out;
+			-ms-transition: background-color 2.5s ease-in-out;
+			transition: background-color 2.5s ease-in-out;
+			-moz-transition-delay: 0.75s;
+			-webkit-transition-delay: 0.75s;
+			-ms-transition-delay: 0.75s;
+			transition-delay: 0.75s;
+			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
+			background-size: auto,
+ 256px 256px;
+			background-position: center,
+ center;
+			background-repeat: no-repeat,
+ repeat;
+			z-index: 2;
+		}
+
+		#bg:after {
+			-moz-transform: scale(1.125);
+			-webkit-transform: scale(1.125);
+			-ms-transform: scale(1.125);
+			transform: scale(1.125);
+			-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out;
+			-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out;
+			-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out;
+			transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out;
+			background-image: url("../../images/bg.jpg");
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			z-index: 1;
+		}
+
+		body.is-article-visible #bg:after {
+			-moz-transform: scale(1.0825);
+			-webkit-transform: scale(1.0825);
+			-ms-transform: scale(1.0825);
+			transform: scale(1.0825);
+			-moz-filter: blur(0.2rem);
+			-webkit-filter: blur(0.2rem);
+			-ms-filter: blur(0.2rem);
+			filter: blur(0.2rem);
+		}
+
+		body.is-preload #bg:before {
+			background-color: #000000;
+		}
 
 /* Wrapper */
 
 	#wrapper {
-		z-index: 2 !important;
-		position: relative;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -1145,9 +1199,11 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
+		position: relative;
 		min-height: 100vh;
 		width: 100%;
 		padding: 4rem 2rem;
+		z-index: 3;
 	}
 
 		#wrapper:before {
@@ -1478,18 +1534,28 @@ input, select, textarea {
 	}
 
 		#main article {
-			background: rgba(27, 31, 34, 0.9) !important;
-			border: 1px solid rgba(255,255,255,0.2) !important;
-			backdrop-filter: blur(8px);
-			-webkit-backdrop-filter: blur(8px);
+			-moz-transform: translateY(0.25rem);
+			-webkit-transform: translateY(0.25rem);
+			-ms-transform: translateY(0.25rem);
+			transform: translateY(0.25rem);
+			-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
+			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
+			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
+			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
+			background-color: rgba(27, 31, 34, 0.85);
+			border-radius: 4px;
 			opacity: 0;
 		}
 
 			#main article.active {
+				-moz-transform: translateY(0);
+				-webkit-transform: translateY(0);
+				-ms-transform: translateY(0);
+				transform: translateY(0);
 				opacity: 1;
 			}
 
@@ -1557,13 +1623,6 @@ input, select, textarea {
 
 		}
 
-		#main article h2,
-		#main article p {
-			text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-			position: relative;
-			z-index: 2;
-		}
-
 /* Footer */
 
 	#footer {
@@ -1601,21 +1660,17 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-/* 添加毛玻璃效果 */
-#bg::before {
-	content: '' !important;
-	display: block !important;
-	position: fixed !important;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0.3) !important; /* 半透明黑色遮罩 */
-	z-index: 2 !important;
+/* 添加头像样式 */
+.logo .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
-/* 兼容不支持backdrop-filter的浏览器 */
-.no-backdrop-filter #main article {
-    background: rgba(27, 31, 34, 0.95) !important;
-    border: 1px solid rgba(255,255,255,0.2);
+/* 调整原图标样式（如果需要） */
+.logo {
+    width: 150px;
+    height: 150px;
 }
