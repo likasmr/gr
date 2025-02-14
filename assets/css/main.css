@@ -1107,14 +1107,12 @@ input, select, textarea {
 /* BG */
 
 	#bg {
-		background-image: none !important;
-		position: fixed !important;
-		top: 0 !important;
-		left: 0 !important;
-		width: 100% !important;
-		height: 100vh !important;
+		background-image: url('https://www.loliapi.com/acg/') !important;
+		background-size: cover !important;
+		background-position: center !important;
+		filter: blur(8px) brightness(0.7); /* 添加背景模糊和亮度降低 */
+		transform: scale(1.05); /* 防止边缘留白 */
 		z-index: 1 !important;
-		transform: none !important;
 	}
 
 	#bg::before,
@@ -1489,12 +1487,12 @@ input, select, textarea {
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: rgba(27, 31, 34, 0.85);
-			border-radius: 4px;
+			background: rgba(27, 31, 34, 0.85) !important;
+			backdrop-filter: blur(12px) saturate(160%);
+			-webkit-backdrop-filter: blur(12px) saturate(160%);
+			border: 1px solid rgba(255,255,255,0.15);
+			box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 			opacity: 0;
-			background: rgba(27, 31, 34, 0.65) !important;
-			backdrop-filter: blur(10px) !important;
-			border: 1px solid rgba(255,255,255,0.1) !important;
 		}
 
 			#main article.active {
@@ -1569,9 +1567,11 @@ input, select, textarea {
 
 		}
 
-		#main article h2.major,
+		#main article h2,
 		#main article p {
-			text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+			text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+			position: relative;
+			z-index: 2;
 		}
 
 /* Footer */
@@ -1622,4 +1622,10 @@ input, select, textarea {
 	height: 100%;
 	background: rgba(0,0,0,0.3) !important; /* 半透明黑色遮罩 */
 	z-index: 2 !important;
+}
+
+/* 兼容不支持backdrop-filter的浏览器 */
+.no-backdrop-filter #main article {
+    background: rgba(27, 31, 34, 0.95) !important;
+    border: 1px solid rgba(255,255,255,0.2);
 }

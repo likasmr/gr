@@ -21,6 +21,13 @@
 				background-color: transparent !important;
 			}
 		</style>
+		<script>
+			// 检测是否支持backdrop-filter
+			if (!('backdropFilter' in document.documentElement.style) && 
+				!('webkitBackdropFilter' in document.documentElement.style)) {
+				document.documentElement.classList.add('no-backdrop-filter');
+			}
+		</script>
 	</head>
 	<body class="is-preload">
 
