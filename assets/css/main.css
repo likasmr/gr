@@ -1306,16 +1306,18 @@ input, select, textarea {
 
 		@keyframes glow {
 			0% {
-				box-shadow: 0 0 10px rgba(0, 50, 200, 0.6),
-							inset 0 0 5px rgba(216, 202, 235, 0);
+				box-shadow: 0 0 50px 10px rgba(0, 50, 200, 0.6),
+							inset 0 0 30px rgba(216, 202, 235, 0);
+				filter: drop-shadow(0 0 20px rgba(0,50,200,0.8));
 			}
 			50% {
-				box-shadow: 0 0 30px rgba(216, 202, 235, 0.6),
-							inset 0 0 15px rgba(216, 202, 235, 0.4);
+				box-shadow: 0 0 30px 5px rgba(216, 202, 235, 0.6),
+							inset 0 0 25px 10px rgba(216, 202, 235, 0.4);
 			}
 			100% {
-				box-shadow: 0 0 40px rgba(216, 202, 235, 0.9),
-							inset 0 0 20px rgba(216, 202, 235, 0.8);
+				box-shadow: 0 0 15px 2px rgba(216, 202, 235, 0.9),
+							inset 0 0 15px 5px rgba(216, 202, 235, 0.8);
+				filter: drop-shadow(0 0 30px rgba(216,202,235,0.9));
 			}
 		}
 
@@ -1348,6 +1350,42 @@ input, select, textarea {
 
 		#header .logo:hover img {
 			transform: scale(1.08);
+		}
+
+		#header .logo:after {
+			content: '';
+			position: absolute;
+			top: -10%;
+			left: -10%;
+			width: 120%;
+			height: 120%;
+			background: radial-gradient(circle at 50% 50%, 
+				rgba(216, 202, 235, 0.4) 0%,
+				rgba(216, 202, 235, 0.2) 30%,
+				rgba(0,50,200,0.1) 70%,
+				transparent 100%);
+			opacity: 0;
+			transition: opacity 1s ease;
+		}
+
+		#header .logo:hover:after {
+			opacity: 1;
+			animation: converge 1.5s ease-in-out;
+		}
+
+		@keyframes converge {
+			0% {
+				transform: scale(2);
+				opacity: 0;
+			}
+			50% {
+				transform: scale(1.2);
+				opacity: 0.8;
+			}
+			100% {
+				transform: scale(1);
+				opacity: 1;
+			}
 		}
 
 		#header .content {
