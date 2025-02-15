@@ -1299,24 +1299,60 @@ input, select, textarea {
 			border-radius: 100%;
 			overflow: hidden;
 			position: relative;
-			box-shadow: 0 0 30px rgba(0, 84, 255, 0.7);
+			box-shadow: 0 0 30px rgba(0, 84, 255, 0.4);
 			transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 		}
 
-			#header .logo:hover {
-				box-shadow: 0 0 30px rgba(216, 202, 235, 0.7);
-			}
+		#header .logo:before {
+			content: '';
+			position: absolute;
+			top: -2px;
+			left: -2px;
+			right: -2px;
+			bottom: -2px;
+			border-radius: 100%;
+			background: radial-gradient(circle at center, transparent 50%, rgba(0, 84, 255, 0.4) 100%);
+			opacity: 1;
+			z-index: 2;
+			transition: opacity 0.5s ease, background 0.5s ease;
+			pointer-events: none;
+		}
 
-			#header .logo img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-			}
+		#header .logo:hover {
+			box-shadow: 0 0 30px rgba(216, 202, 235, 0.7);
+		}
 
-			#header .logo:hover img {
-				transform: scale(1.08);
+		#header .logo:hover:before {
+			background: radial-gradient(circle at center, rgba(216, 202, 235, 0.7) 0%, transparent 70%);
+			opacity: 0;
+			animation: lightGather 0.5s ease-out forwards;
+		}
+
+		@keyframes lightGather {
+			0% {
+				opacity: 1;
+				background: radial-gradient(circle at center, transparent 50%, rgba(0, 84, 255, 0.4) 100%);
 			}
+			50% {
+				opacity: 0.5;
+				background: radial-gradient(circle at center, rgba(216, 202, 235, 0.7) 30%, rgba(0, 84, 255, 0.2) 70%);
+			}
+			100% {
+				opacity: 0;
+				background: radial-gradient(circle at center, rgba(216, 202, 235, 0.7) 0%, transparent 70%);
+			}
+		}
+
+		#header .logo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+
+		#header .logo:hover img {
+			transform: scale(1.08);
+		}
 
 		#header .content {
 			border-style: solid;
@@ -1460,13 +1496,8 @@ input, select, textarea {
 				width: 4.75rem;
 				height: 4.75rem;
 				line-height: 4.75rem;
-				box-shadow: 0 0 25px rgba(0, 84, 255, 0.7);
-				transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+				box-shadow: 0 0 25px rgba(0, 84, 255, 0.4);
 			}
-
-				#header .logo:hover {
-					box-shadow: 0 0 25px rgba(216, 202, 235, 0.7);
-				}
 
 			#header .logo img {
 				width: 100%;
