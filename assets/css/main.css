@@ -1301,26 +1301,42 @@ input, select, textarea {
 			position: relative;
 			box-shadow: 0 0 30px rgba(0, 50, 200, 0.6);
 			transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+			animation: glow-out 1s ease-in-out forwards;
 		}
 
 		@keyframes glow {
 			0% {
-				box-shadow: 0 0 20px rgba(216, 202, 235, 0),
-							inset 0 0 15px rgba(216, 202, 235, 0);
+				box-shadow: 0 0 10px rgba(0, 50, 200, 0.6),
+							inset 0 0 5px rgba(216, 202, 235, 0);
 			}
 			50% {
 				box-shadow: 0 0 30px rgba(216, 202, 235, 0.6),
-							inset 0 0 20px rgba(216, 202, 235, 0.4);
+							inset 0 0 15px rgba(216, 202, 235, 0.4);
 			}
 			100% {
 				box-shadow: 0 0 40px rgba(216, 202, 235, 0.9),
-							inset 0 0 10px rgba(216, 202, 235, 0.8);
+							inset 0 0 20px rgba(216, 202, 235, 0.8);
+			}
+		}
+
+		@keyframes glow-out {
+			from {
+				box-shadow: 0 0 40px rgba(216, 202, 235, 0.9),
+							inset 0 0 20px rgba(216, 202, 235, 0.8);
+			}
+			to {
+				box-shadow: 0 0 30px rgba(0, 50, 200, 0.6),
+							inset 0 0 5px rgba(216, 202, 235, 0);
 			}
 		}
 
 		#header .logo:hover {
 			animation: glow 1.5s ease-in-out forwards;
-			box-shadow: 0 0 40px rgba(216, 202, 235, 0.9);
+			animation-fill-mode: forwards;
+		}
+
+		#header .logo:not(:hover) {
+			animation: glow-out 1s ease-in-out;
 		}
 
 		#header .logo img {
