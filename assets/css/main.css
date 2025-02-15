@@ -1306,33 +1306,27 @@ input, select, textarea {
 
 		@keyframes glow {
 			0% {
-				box-shadow: 0 0 30px 15px rgba(0, 50, 200, 0.8),
-						0 0 10px 5px rgba(216, 202, 235, 0.2);
-				filter: brightness(1) contrast(1.2);
+				box-shadow: 0 0 10px rgba(0, 50, 200, 0.6),
+							inset 0 0 5px rgba(216, 202, 235, 0);
 			}
-			30% {
-				box-shadow: 0 0 25px 10px rgba(0, 50, 200, 0.6),
-						0 0 20px 8px rgba(216, 202, 235, 0.4);
-			}
-			60% {
-				box-shadow: 0 0 15px 5px rgba(0, 50, 200, 0.4),
-						0 0 30px 12px rgba(216, 202, 235, 0.6);
+			50% {
+				box-shadow: 0 0 30px rgba(216, 202, 235, 0.6),
+							inset 0 0 15px rgba(216, 202, 235, 0.4);
 			}
 			100% {
-				box-shadow: 0 0 5px 2px rgba(0, 50, 200, 0.2),
-						0 0 40px 15px rgba(216, 202, 235, 0.9);
-				filter: brightness(1.1) contrast(1.3);
+				box-shadow: 0 0 40px rgba(216, 202, 235, 0.9),
+							inset 0 0 20px rgba(216, 202, 235, 0.8);
 			}
 		}
 
 		@keyframes glow-out {
-			0% {
-				box-shadow: 0 0 5px 2px rgba(0, 50, 200, 0.2),
-						0 0 40px 15px rgba(216, 202, 235, 0.9);
+			from {
+				box-shadow: 0 0 40px rgba(216, 202, 235, 0.9),
+							inset 0 0 20px rgba(216, 202, 235, 0.8);
 			}
-			100% {
-				box-shadow: 0 0 30px 15px rgba(0, 50, 200, 0.8),
-						0 0 10px 5px rgba(216, 202, 235, 0.2);
+			to {
+				box-shadow: 0 0 30px rgba(0, 50, 200, 0.6),
+							inset 0 0 5px rgba(216, 202, 235, 0);
 			}
 		}
 
@@ -1354,41 +1348,6 @@ input, select, textarea {
 
 		#header .logo:hover img {
 			transform: scale(1.08);
-		}
-
-		#header .logo:after {
-			content: '';
-			position: absolute;
-			top: -10%;
-			left: -10%;
-			width: 120%;
-			height: 120%;
-			background: radial-gradient(circle at 50% 50%, 
-				rgba(216, 202, 235, 0.6) 0%,
-				rgba(216, 202, 235, 0.4) 40%,
-				rgba(0,50,200,0.2) 70%,
-				transparent 100%);
-			mix-blend-mode: screen;
-			opacity: 0;
-			transition: opacity 1s ease;
-		}
-
-		#header .logo:hover:after {
-			opacity: 1;
-			animation: converge 1.5s ease-in-out;
-		}
-
-		@keyframes converge {
-			0% {
-				transform: scale(3);
-				opacity: 0.3;
-				filter: blur(20px);
-			}
-			100% {
-				transform: scale(0.8);
-				opacity: 0.8;
-				filter: blur(5px);
-			}
 		}
 
 		#header .content {
